@@ -18,6 +18,7 @@ include_once "menu.php";
         $("#templates").load("lib/dashboard/templates.html", initDashboard);
 
 
+
         function initDashboard() {
 
             // to make it possible to add widgets more than once, we create clientside unique id's

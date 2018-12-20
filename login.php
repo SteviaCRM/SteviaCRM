@@ -32,39 +32,32 @@ try {
  }
 
 foreach($result as $Row) {
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <title><?php print $LANG['login_text'].$Row['companyName']; ?></title>
-
-	 <link href="css/styles.css" type="text/css" rel="stylesheet">
+	<link href="css/styles.css" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" href="lib/jquery/development-bundle/themes/<?php print $_SESSION['style'] ?>/jquery.ui.all.css">
-
 </head>
-<script type="text/javascript" >
 
+<script>
 function doLogin() {
-
-if(document.getElementById("userName").value=="") { 
-alert("<?php print $LANG['enter_user_name']; ?>");
-document.getElementById("userName").focus();
-return;
+	if(document.getElementById("userName").value=="") { 
+	alert("<?php print $LANG['enter_user_name']; ?>");
+	document.getElementById("userName").focus();
+	return;
 }
 
 if(document.getElementById("pwd").value=="") { 
-alert("Skriv inn passord");
-document.getElementById("pwd").focus();
-return;
+	alert("Skriv inn passord");
+	document.getElementById("pwd").focus();
+	return;
 }
 
-		
-var url = "modules/system/do_login.php";
-var params = "userName="+document.getElementById('userName').value+"&pwd="+document.getElementById('pwd').value;
+let url = "modules/system/do_login.php";
+let params = "userName="+document.getElementById('userName').value+"&pwd="+document.getElementById('pwd').value;
 
 http=new XMLHttpRequest();
 
@@ -79,38 +72,30 @@ http.onreadystatechange = function() {//Call a function when the state changes.
 	if(http.readyState == 4 && http.status == 200) {
 
 		 if(!http.responseText.indexOf("nologin")) {
-       document.getElementById("loginResponse").innerHTML="<span class=\"error\"><br><?php print $LANG['wrong_user_name']; ?></span>"
+    	   document.getElementById("loginResponse").innerHTML="<span class=\"error\"><br><?php print $LANG['wrong_user_name']; ?></span>"
 		 } else if(!http.responseText.indexOf("inactive")) {
-       document.getElementById("loginResponse").innerHTML="<span class=\"error\"><br><?php print $LANG['inactive_user']; ?></span>"
+	       document.getElementById("loginResponse").innerHTML="<span class=\"error\"><br><?php print $LANG['inactive_user']; ?></span>"
 		 } else {
-		 document.getElementById("loginResponse").innerHTML="	<span class=\"message\"><br><?php print $LANG['welcome']; ?>, "+http.responseText+"</span>";  
+			 document.getElementById("loginResponse").innerHTML="	<span class=\"message\"><br><?php print $LANG['welcome']; ?>, "+http.responseText+"</span>";  
 		
 		setTimeout("document.location='index.php'",550);
 	    }
 }
 }
 http.send(params);
-
-
- 
-
 }
-
-
 </script>
 
 <body>
-
-
 <table class="logintable ui-widget-content ui-corner-all">
-<tr><td colspan="2"><img src="images/logo/logo1.png" alt="" style="display:block;margin-left:auto;margin-right:auto"></td></tr>
-<tr><td colspan="2" align="center"><b><?php print $LANG['login_text'].$Row['companyName'];?></b><br><br></td></tr>
-<tr><td><?php print $LANG['user_name'];?>: </td><td><input type="text" id="userName" name="userName" style="width:200px;"></td></tr>
-<tr><td><?php print $LANG['pwd'];?>: </td><td><input type="password" id="pwd" name="pwd" style="width:200px;"></td></tr>
-<tr><td></td><td><input type="button" name="login" value="<?php print $LANG['login'];?>" onclick="doLogin()" style="width:80px;"></td></tr>
-<tr><td colspan="2" align="center">
-<div id="loginResponse" style="width:100%; height=40px;text-align:center;"> </div>
-</td></tr>
+	<tr><td colspan="2"><img src="images/logo/logo1.png" alt="" style="display:block;margin-left:auto;margin-right:auto"></td></tr>
+	<tr><td colspan="2" align="center"><b><?php print $LANG['login_text'].$Row['companyName'];?></b><br><br></td></tr>
+	<tr><td><?php print $LANG['user_name'];?>: </td><td><input type="text" id="userName" name="userName" style="width:200px;"></td></tr>
+	<tr><td><?php print $LANG['pwd'];?>: </td><td><input type="password" id="pwd" name="pwd" style="width:200px;"></td></tr>
+	<tr><td></td><td><input type="button" name="login" value="<?php print $LANG['login'];?>" onclick="doLogin()" style="width:80px;"></td></tr>
+	<tr><td colspan="2" align="center">
+	<div id="loginResponse" style="width:100%; height=40px;text-align:center;"> </div>
+	</td></tr>
 </table>
 <?php
 if($_GET['logout']=="yes") {
@@ -120,13 +105,12 @@ print "</script>";
 
 session_unset();  // unset all session variables
 session_destroy();
-
 }
 }
 ?>
 
 <script type="text/javascript" >
-document.getElementById("userName").focus();
+	document.getElementById("userName").focus();
 </script>
 
 </body>

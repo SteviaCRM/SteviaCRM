@@ -70,3 +70,18 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/itfakultetet/stevia.itfakultetet.no/modules/reports/get_salesrep_charts.php on line 23
+[04-Oct-2018 19:39:30 UTC] PHP Deprecated:  mysql_query(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/per_rep_sales.php on line 10
+[04-Oct-2018 19:39:30 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/per_rep_sales.php on line 10
+[04-Oct-2018 19:39:30 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/per_rep_sales.php on line 10
+[04-Oct-2018 19:45:08 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 23
+[04-Oct-2018 19:45:08 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 27
+[04-Oct-2018 19:45:08 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 40
+[04-Oct-2018 19:45:08 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 44
+[04-Oct-2018 19:45:08 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 57
+[04-Oct-2018 19:45:08 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 61
+[08-Oct-2018 11:23:26 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 23
+[08-Oct-2018 11:23:26 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 27
+[08-Oct-2018 11:23:26 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 40
+[08-Oct-2018 11:23:26 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 44
+[08-Oct-2018 11:23:26 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 57
+[08-Oct-2018 11:23:26 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, null given in /home/steviacr/public_html/codiad/workspace/SteviaCRM/Master/modules/reports/get_salesrep_charts.php on line 61
