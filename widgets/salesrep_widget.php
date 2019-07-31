@@ -35,4 +35,8 @@ try {
 
 </h1>
 
-<iframe id="repGraphArea" style="height:220px;width:100%;border:none;margin:0;padding:0" src="modules/sales/get_salesreps_chart.php"></iframe>
+<iframe id="repGraphArea" style="height:220px;width:100%;border:none;margin:0;padding:0"></iframe>
+
+<script>
+document.getElementById("repGraphArea").src='modules/sales/get_salesreps_chart.php?type=bar&year=' + document.getElementById('year').value;
+</script>
