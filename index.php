@@ -6,7 +6,7 @@ include_once "menu.php";
 
 <script type="text/javascript">
     // This is the code for definining the dashboard
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         // Tabs 
         $('#tabs').tabs();
@@ -44,44 +44,47 @@ include_once "menu.php";
                 // When using the layoutClass, it is possible to change layout using only another class. In this case
                 // you don't need the html property in the layout
 
-                layouts:
-                        [
-                            {title: "Layout1",
-                                id: "layout1",
-                                image: "lib/dashboard/layouts/layout1.png",
-                                html: '<div class="layout layout-a"><div class="column first column-first"></div></div>',
-                                classname: 'layout-a'
-                            },
-                            {title: "Layout2",
-                                id: "layout2",
-                                image: "lib/dashboard/layouts/layout2.png",
-                                html: '<div class="layout layout-aa"><div class="column first column-first"></div><div class="column second column-second"></div></div>',
-                                classname: 'layout-aa'
-                            },
-                            {title: "Layout3",
-                                id: "layout3",
-                                image: "lib/dashboard/layouts/layout3.png",
-                                html: '<div class="layout layout-ba"><div class="column first column-first"></div><div class="column second column-second"></div></div>',
-                                classname: 'layout-ba'
-                            },
-                            {title: "Layout4",
-                                id: "layout4",
-                                image: "lib/dashboard/layouts/layout4.png",
-                                html: '<div class="layout layout-ab"><div class="column first column-first"></div><div class="column second column-second"></div></div>',
-                                classname: 'layout-ab'
-                            },
-                            {title: "Layout5",
-                                id: "layout5",
-                                image: "lib/dashboard/layouts/layout5.png",
-                                html: '<div class="layout layout-aaa"><div class="column first column-first"></div><div class="column second column-second"></div><div class="column third column-third"></div></div>',
-                                classname: 'layout-aaa'
-                            }
-                        ]
+                layouts: [{
+                        title: "Layout1",
+                        id: "layout1",
+                        image: "lib/dashboard/layouts/layout1.png",
+                        html: '<div class="layout layout-a"><div class="column first column-first"></div></div>',
+                        classname: 'layout-a'
+                    },
+                    {
+                        title: "Layout2",
+                        id: "layout2",
+                        image: "lib/dashboard/layouts/layout2.png",
+                        html: '<div class="layout layout-aa"><div class="column first column-first"></div><div class="column second column-second"></div></div>',
+                        classname: 'layout-aa'
+                    },
+                    {
+                        title: "Layout3",
+                        id: "layout3",
+                        image: "lib/dashboard/layouts/layout3.png",
+                        html: '<div class="layout layout-ba"><div class="column first column-first"></div><div class="column second column-second"></div></div>',
+                        classname: 'layout-ba'
+                    },
+                    {
+                        title: "Layout4",
+                        id: "layout4",
+                        image: "lib/dashboard/layouts/layout4.png",
+                        html: '<div class="layout layout-ab"><div class="column first column-first"></div><div class="column second column-second"></div></div>',
+                        classname: 'layout-ab'
+                    },
+                    {
+                        title: "Layout5",
+                        id: "layout5",
+                        image: "lib/dashboard/layouts/layout5.png",
+                        html: '<div class="layout layout-aaa"><div class="column first column-first"></div><div class="column second column-second"></div><div class="column third column-third"></div></div>',
+                        classname: 'layout-aaa'
+                    }
+                ]
 
             }); // end dashboard call
 
             // binding for a widgets is added to the dashboard
-            dashboard.element.live('dashboardAddWidget', function (e, obj) {
+            dashboard.element.live('dashboardAddWidget', function(e, obj) {
                 var widget = obj.widget;
 
                 dashboard.addWidget({
@@ -96,7 +99,6 @@ include_once "menu.php";
             dashboard.init();
         }
     });
-
 </script>
 
 
@@ -106,7 +108,7 @@ include_once "menu.php";
 <link rel="stylesheet" type="text/css" href="lib/dashboard/themes/default/dashboardui.css" />
 
 
-<link rel="stylesheet" type="text/css" href="lib/jquery/jquery.jqplot.css" />  
+<link rel="stylesheet" type="text/css" href="lib/jquery/jquery.jqplot.css" />
 <script class="code" type="text/javascript">
     var addProduct = "<?php print $LANG['addProduct']; ?>"
     var editProduct = "<?php print $LANG['editProduct']; ?>"
@@ -136,23 +138,21 @@ include_once "menu.php";
     var editCallingList = "<?php print $LANG['edit_calling_list']; ?>"
 
     var dataSaved = "<?php print $LANG['data_saved']; ?>"
-
-
 </script>
 
 </head>
 
 <body style="font-size:12px;margin:0px;padding:2px">
     <div id="main_table" style="margin-top:0px;padding:0px;">
-        <!--  Show Tabs -->   
+        <!--  Show Tabs -->
         <div id="tabs" style="width:100%;float:left;margin-top:0px">
-            <!--  Show Tabs Heading --> 
+            <!--  Show Tabs Heading -->
             <ul>
                 <li><a href="#mydashboard"><?php print $LANG['my_dashboard']; ?></a></li>
-                <li><a href="#reports"><?php print $LANG['my_reports']; ?></a></li>			
+                <li><a href="#reports"><?php print $LANG['my_reports']; ?></a></li>
                 <li><a href="#settings"><?php print $LANG['my_settings']; ?></a></li>
             </ul>
-            <!--  End Tabs Heading --> 			
+            <!--  End Tabs Heading -->
 
 
             <!--  Show Dashboard Module  -->
@@ -174,8 +174,6 @@ include_once "menu.php";
                     </div>
                 </div>
 
-
-
             </div>
             <!--  End Dashboard Module  -->
 
@@ -191,7 +189,6 @@ include_once "menu.php";
             </div>
             <!--  End Settings Module  -->
 
-
         </div>
         <!--  End tabs -->
         <br>
@@ -199,7 +196,6 @@ include_once "menu.php";
     </div>
     <!--  End main_table div -->
 
-
-
 </body>
+
 </html>

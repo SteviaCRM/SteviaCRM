@@ -7,14 +7,15 @@ require_once "../system/db.php";  // get pdo connection settings
 // require_once "../lang/" . $_SESSION['lang'] . ".php"; // get language array
 
 
-if ($_GET['year'] == "") {
-    $year = date('Y');
+if (!isset($_GET['year'])) {
+    // $year = date('Y');
+    $year = '2017';
 } else {
     $year = $_GET['year'];
 }
 
 
-if ($_GET['type'] == "") {
+if (!isset($_GET['type'])) {
     $type = "Line";
 } else {
     $type = $_GET['type'];

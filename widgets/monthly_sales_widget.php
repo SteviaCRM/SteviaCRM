@@ -6,7 +6,7 @@ if (!isset($_SESSION['userID'])) { // check if user is logged in
 require_once "../modules/system/db.php";  // get pdo connection settings
 require_once "../lang/" . $_SESSION['lang'] . ".php"; // get language array
 
-$queryYear = "SELECT YEAR(orderDate) as year from ".$orders." Group by year ORDER BY year desc";
+$queryYear = "SELECT YEAR(orderDate) as year from " . $orders . " Group by year ORDER BY year desc";
 
 try {
     $ResultYear = $pdo->query($queryYear);
@@ -16,23 +16,27 @@ try {
 
 ?>
 <h1><select id="year2" style="font-size:12px" onchange="document.getElementById('monthlyGraphArea').src='modules/sales/get_monthly_chart.php?year='+(this.value)+'&type='+document.getElementById('graphType2').value;"></h1>
-<?php 
+<?php
 foreach ($ResultYear as $RowYear) {
-?>
-<option value="<?php print $RowYear['year'];?>"><?php print $RowYear['year'];?></option>
-<?php 
+    ?>
+    <option value="<?php print $RowYear['year']; ?>"><?php print $RowYear['year']; ?></option>
+<?php
 }
 ?>
 
-</select> 
+</select>
 
 
 <select id="graphType2" style="font-size:12px" onchange="document.getElementById('monthlyGraphArea').src='modules/sales/get_monthly_chart.php?type='+(this.value)+'&year='+document.getElementById('year2').value;">
-<option value="Bar"><?php print $LANG['bar_graph'];?></option>
-<option value="Line" selected><?php print $LANG['line_graph'];?></option>
-<option value="Pie"><?php print $LANG['pie_graph'];?></option>
+    <option value="Bar"><?php print $LANG['bar_graph']; ?></option>
+    <option value="Line" selected><?php print $LANG['line_graph']; ?></option>
+    <option value="Pie"><?php print $LANG['pie_graph']; ?></option>
 </select>
- 
+
 </h1>
 
-<iframe id="monthlyGraphArea" style="height:220px;width:100%;border:none;margin:0;padding:0" src="modules/sales/get_monthly_chart.php"></iframe>
+<iframe id="monthlyGraphArea" style="height:220px;width:100%;border:none;margin:0;padding:0" src=""></iframe>
+
+<script>
+document.getElementById('monthlyGraphArea').src='modules/sales/get_monthly_chart.php?type='+(document.getElementById('graphType2').value)+'&year='+document.getElementById('year2').value;
+</script>

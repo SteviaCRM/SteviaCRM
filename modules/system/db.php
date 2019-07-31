@@ -1,8 +1,8 @@
 <?php
 $server = "localhost";
-$username = "itfakult_stevia";
-$password= ":)stevia432A";
-$DBName = "itfakult_stevia";
+$username = "stevia";
+$password= "stevia432a";
+$DBName = "stevia";
 
 try {
 
