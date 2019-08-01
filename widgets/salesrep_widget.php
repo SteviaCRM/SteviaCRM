@@ -38,5 +38,5 @@ try {
 <iframe id="repGraphArea" style="height:220px;width:100%;border:none;margin:0;padding:0"></iframe>
 
 <script>
-document.getElementById("repGraphArea").src='modules/sales/get_salesreps_chart.php?type=bar&year=' + document.getElementById('year').value;
+document.getElementById("repGraphArea").src='modules/sales/get_salesreps_chart.php?type=Bar&year=' + document.getElementById('year').value;
 </script>
