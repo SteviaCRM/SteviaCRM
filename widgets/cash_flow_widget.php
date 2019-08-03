@@ -54,9 +54,9 @@ $selected="";
 
 </select>
 </h1>
-<iframe id="graphFrame" style="border:none;;width:100%;height:220px;" src=""></iframe>
+<iframe id="graphFrame" style="border:none;;width:100%;height:220px;"></iframe>
 
 <script>
-document.getElementById('graphFrame').src='modules/orders/get_order_charts.php?year='+(getElementById('year').value)+'&orderStatusID='+(getElementById('orderStatusID').value);
+document.getElementById('graphFrame').src='modules/orders/get_order_charts.php?year='+document.getElementById('year').value+'&orderStatusID='+document.getElementById('orderStatusID').value;
 </script>
 
