@@ -14,7 +14,7 @@ $query = "UPDATE ".$companies." SET contactAgain=:callDate  WHERE regNumber=:reg
 
 try {
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(':callDate', $calldate);
+    $stmt->bindParam(':callDate', $callDate);
     $stmt->bindParam(':regNumber', $regNumber);
     $stmt->execute();
 
