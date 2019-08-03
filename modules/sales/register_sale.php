@@ -92,12 +92,8 @@ include_once "../../lang/" . $_SESSION['lang'] . ".php";
                 echo "3 - Data was not fetched, because: " . $e->getMessage();
             }
 
-
-
-            //
         }
         ?>
-
 
         <script type="text/javascript" >
             var price = new Array();
