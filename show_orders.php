@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['userID'])) { // check if user is logged in
 header("Location:login.php");
 }
-include_once "menu.php";
+include_once("head.php");
 
 $orderStatusID = $_GET['status'];
 if($orderStatusID=="") { $orderStatusID="all"; } 
@@ -11,8 +11,8 @@ if($orderStatusID=="") { $orderStatusID="all"; }
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8" />
-<title></title>
+<?php include_once("head.php"); ?>
+
 <script language="javascript" type="text/javascript" src="lib/indexFunctions.js"></script> 
 <script type="text/javascript" src="modules/orders/orderFunctions.js"></script>
 </head>
@@ -21,9 +21,10 @@ if($orderStatusID=="") { $orderStatusID="all"; }
 var price = new Array();
 var productDescription = new Array();
 </script>
-
  
 <?php 
+include_once("menu.php");
+
 $querys = "SELECT * FROM ".$products." ORDER by productName desc";
 
 try {

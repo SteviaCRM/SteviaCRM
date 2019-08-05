@@ -1,16 +1,14 @@
+<?php session_start(); ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
-        <meta  charset="utf-8" />
-        <title></title>
         <script language="javascript" type="text/javascript" src="lib/indexFunctions.js"></script>
-        <?php
-        include_once "menu.php";
-        ?>
+        <?php include_once('head.php'); ?>
     </head>
     <body style="font-size:12px">
         <?php
-        $companyStatus = $_GET['status'];
+        include_once("menu.php");
+                $companyStatus = $_GET['status'];
         $regNumber = $_GET['regNumber'];
 
         if ($_GET['regNumber'] == "") {

@@ -54,7 +54,7 @@ if(isset($_SESSION['admin']))  {
 try {
     $Result = $pdo->query($resultQuery);
 } catch (PDOException $e) {
-    echo "Data was not fetched, because: " . $e->getMessage();
+     echo "1 - Data was not fetched, because: " . $e->getMessage();
 }
 
 ?>
