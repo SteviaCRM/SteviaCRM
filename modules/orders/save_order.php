@@ -21,7 +21,7 @@ $orderComments = $_POST['comments'];
 if ($_POST['orderStatusID'] != "") {
     $orderStatusID = $_POST['orderStatusID'];
 } else {
-    $orderStatusID = $_SESSION['projetFirstOrderStage'];
+    $orderStatusID = $_SESSION['projectFirstOrderStage'];
 }
 
 if ($formAction == "Insert") {
@@ -60,7 +60,7 @@ try {
     $stmt->bindParam(':orderComments', $orderComments);
     $stmt->execute();
 
-    $orderID = $stmtm->lastInsertId();  //get OrderID 
+    $orderID = $stmt->lastInsertId();  //get OrderID 
 } catch (PDOException $e) {
     echo "1 - Data was not saved, because: " . $e->getMessage();
 }

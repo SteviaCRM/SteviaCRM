@@ -95,6 +95,7 @@ include_once "../../lang/" . $_SESSION['lang'] . ".php";
         }
         ?>
 
+
         <script type="text/javascript" >
             var price = new Array();
             var productDescription = new Array();
@@ -103,11 +104,13 @@ include_once "../../lang/" . $_SESSION['lang'] . ".php";
         </script>
 
 
-        <table class="ui-widget-content ui-corner-all" style="height:230px;font-size:12px;padding:10px;float:left;margin-right:5px;">
-            <form id="registerForm" method="post" action="../orders/save_order.php?formAction=<?php print $formAction; ?>">
-                <input type="hidden" name="regNumber" value="<?php print $regNumber; ?>">
+    <table class="ui-widget-content ui-corner-all" style="height:230px;font-size:12px;padding:10px;float:left;margin-right:5px;">
+        
+        <form id="registerForm" method="post" action="../orders/save_order.php?formAction=<?php print $formAction; ?>">
 
-                <input type="hidden" name="orderID" value="<?php print $orderID; ?>">
+            <input type="hidden" name="regNumber" value="<?php print $regNumber; ?>">
+
+            <input type="hidden" name="orderID" value="<?php print $orderID; ?>">
                 <tr>
                     <td width="150"><?php print $LANG['product']; ?>:</td>
                     <td>
