@@ -112,7 +112,7 @@ var lNext = "<?php print $LANG['Next']; ?>";
 var lLast =  "<?php print $LANG['Last']; ?>";
 </script>
 <!--  Show Logo -->
-<a href="index.php" ><img src="images/logo/logo1.png" style="border:0px;vertical-align:top;margin-left:15px;margin-bottom:0px;margin-top:5px" alt="" ></a>
+<a href="index.php" ><img src="images/logo/logo1.png" style="border:0px;vertical-align:top;margin-left:15px;margin-bottom:0px;margin-top:11px" alt="" ></a>
 <!--  End Logo -->
 
 

@@ -38,12 +38,23 @@ $query = "SELECT
 ".$orders.".orderComments 
  
 FROM ".$orders." JOIN ".$companies." ON ".$orders.".regNumber = ".$companies.".regNumber and ".$orders.".orderID=".$orderID;
-if (!$Result= mysql_db_query($DBName, $query, $Link)) {
-         print "No database connection <br>".mysql_error();
-    } 
-if(!$Row=MySQL_fetch_array($Result)) {
-      print "No order found <br>".$query;
-	}
+
+
+try {
+	$stmt = $pdo->prepare($query);
+	//$stmt->bindParam(':productID', $Row['productID']);
+	$stmt->execute();
+	$Row = $stmt->fetch();
+} catch (PDOException $e) {
+	echo "Data was not fetched, because: " . $e->getMessage();
+}
+
+// if(!$Row) {
+//       print "No order found <br>".$query;
+// 	}
+
+
+
 
 if($Row['creditDays']=="") {
 	$creditDays = "10";
@@ -53,13 +64,18 @@ if($Row['creditDays']=="") {
 
 if($Row['customerContact']=="") {
 		// Get company manager from company table		
-		$queryc = "SELECT companyManager FROM ".$companies." WHERE regNumber=".$regNumber;
-			if (!$Resultc= mysql_db_query($DBName, $queryc, $Link)) {
-           print "No database connection <br>".mysql_error();
-        	} else { 
-        		$Rowc=MySQL_fetch_array($Resultc);
-			}        
+		$queryc = "SELECT companyManager FROM ".$companies." WHERE regNumber=:regNumber";
 		
+		try {
+			$stmt = $pdo->prepare($queryc);
+			$stmt->bindParam(':regnumber', $regNumber);
+			$stmt->execute();
+			$Rowc = $stmt->fetch();
+		} catch (PDOException $e) {
+			echo "Data was not fetched, because: " . $e->getMessage();
+		}
+
+
 	$customerContact = $Rowc['companyManager'];
 	
 	} else {
@@ -99,10 +115,16 @@ $orderRepID = $Row['orderRepID'];
 
 $selected="";
 $querys = "SELECT * FROM ".$orderstatus." ORDER by orderStatusID";
-if (!$Results= mysql_db_query($DBName, $querys, $Link)) {
-           print "No database connection <br>".mysql_error();
-        } 
-while($Rows=MySQL_fetch_array($Results)) {
+
+try {
+    $results = $pdo->query($querys);
+} catch (PDOException $e) {
+    echo "Data was not fetched, because: " . $e->getMessage();
+}
+
+foreach ($results as $Rows) {
+
+
 if($Rows['orderStatusID']==$Row['orderStatusID']) { 
 $selected="selected";
 } else {
@@ -137,11 +159,14 @@ $selected="";
 <?php 
 
 $queryu = "SELECT userID, fullName FROM ".$users." ORDER by fullName";
-if (!$Resultu= mysql_db_query($DBName, $queryu, $Link)) {
-           print "No database connection <br>".mysql_error();
-        } 
+
+try {
+    $resultu = $pdo->query($queryu);
+} catch (PDOException $e) {
+    echo "Data was not fetched, because: " . $e->getMessage();
+}
         
-while($Rowu=MySQL_fetch_array($Resultu)) { // list users
+foreach ($resultu as $Rowu) {	
 	
 	if($Rowu['userID']==$orderRepID) { // select user that is sales rep for this order
 	$sel="selected=\"true\"";
@@ -167,11 +192,16 @@ $sel="";
 
 $selected="";
 $querys = "SELECT * FROM ".$products." ORDER by productName desc";
-if (!$Results= mysql_db_query($DBName, $querys, $Link)) {
-           print "No database connection <br>".mysql_error();
-        } 
-while ($Rows=MySQL_fetch_array($Results)) { // list products 
-	
+
+
+try {
+    $results = $pdo->query($querys);
+} catch (PDOException $e) {
+    echo "Data was not fetched, because: " . $e->getMessage();
+}
+        
+foreach ($results as $Rows) {		
+
 if($Rows['productID']==$Row['productID']) { 
 $selected="selected";
 } else {
